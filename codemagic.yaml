@@ -2,7 +2,7 @@ workflows:
   linux-system-check:
     name: CPU Info Workflow
     max_build_duration: 10
-    instance_type: linux_x4 # Corrected from linux_x86_64
+    instance_type: linux # Corrected from linux_x86_64
     scripts:
       - name: Display CPU Architecture
         script: |
