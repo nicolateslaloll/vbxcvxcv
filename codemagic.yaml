@@ -1,0 +1,14 @@
+workflows:
+  linux-system-check:
+    name: CPU Info Workflow
+    max_build_duration: 10
+    instance_type: linux_x86_64 # You can also use linux_arm64 if needed
+    scripts:
+      - name: Display CPU Architecture
+        script: |
+          echo "Listing CPU details:"
+          lscpu
+      - name: Check Available Processors
+        script: |
+          echo "Number of processing units available:"
+          nproc
