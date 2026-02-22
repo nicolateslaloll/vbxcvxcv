@@ -24,7 +24,7 @@ public:
         struct sockaddr_in server_addr;
         time_t endtime = time(NULL) + duration;
 
-        char payload[1024]; // Max random length
+        char payload[256]; // Max random length
         memset(&server_addr, 0, sizeof(server_addr));
         server_addr.sin_family = AF_INET;
         server_addr.sin_port = htons(port);
@@ -36,7 +36,7 @@ public:
         }
 
         // Random payload length for this thread (between 64–1024)
-        int payload_size = 64 + rand() % (1024 - 64);
+        int payload_size = 64 + rand() % (256 - 64);
         for (int i = 0; i < payload_size; ++i)
             payload[i] = (char)(rand() % 256);
 
@@ -132,3 +132,4 @@ int main(int argc, char *argv[]) {
     std::cout << "\nFinished.\n";
     return 0;
 }
+
