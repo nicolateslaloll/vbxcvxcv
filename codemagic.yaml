@@ -1,14 +1,15 @@
 workflows:
-  linux-system-check:
-    name: CPU Info Workflow
+  mac-system-check:
+    name: CPU Info Workflow (Mac M4)
     max_build_duration: 10
-    instance_type: linux # Corrected from linux_x86_64
+    instance_type: mac_mini_m4  # or mac_mini_m1 / mac_mini_m2 depending on provider
     scripts:
       - name: Display CPU Architecture
         script: |
           echo "Listing CPU details:"
-          lscpu
+          system_profiler SPHardwareDataType
+          uname -m
       - name: Check Available Processors
         script: |
           echo "Number of processing units available:"
-          nproc
+          sysctl -n hw.ncpu
