@@ -2,7 +2,7 @@ workflows:
   linux-cpp-build:
     name: C++ Build & Run (Linux X4)
     max_build_duration: 10
-    instance_type: linux_x4
+    instance_type: linux_x2
 
     scripts:
       - name: Show System Info
